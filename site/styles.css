@@ -1,0 +1,138 @@
+/* From the First Cone. The title page of the app, set for the web: same pigments, same face as Prose & Pigment. */
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-weight: 600;
+  src: url("/fonts/source-serif-4-600.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --paper: #F5F1E6;
+  --ink: #1F2E4A;   /* 10.49:1 on paper */
+  --quiet: #69645A; /* 5.21:1 on paper */
+  --stripe-a: #6E8B5B;
+  --stripe-b: #586F49;
+  --cone: #D2A04A;
+  --cone-band: #82601E;
+  --cone-line: #F5F1E6;
+  --text: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --focus-ring: 2px solid var(--ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #383028;
+    --ink: #F0EBDF;
+    --quiet: #A39C90; /* 4.76:1 on dark paper */
+    --stripe-a: #56704A;
+    --stripe-b: #465C3A;
+    --cone: #D9B56E;
+    --cone-band: #8A6A2A;
+    --cone-line: #ECE7DA;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root { --quiet: var(--ink); }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.45;
+  font-kerning: normal;
+  font-synthesis: none;
+  overflow-wrap: break-word;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.25rem, 5vw, 3rem);
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+.mark { display: block; margin-bottom: 0.9rem; }
+.st-a { fill: var(--stripe-a); }
+.st-b { fill: var(--stripe-b); }
+.cone { fill: var(--cone); }
+.cone-band { fill: var(--cone-band); }
+.cone-line { stroke: var(--cone-line); }
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+.tagline {
+  margin: 0.4rem 0 0;
+  font-size: 1.25rem;
+  color: var(--quiet);
+}
+
+.status {
+  margin: 2.25rem 0 0;
+}
+
+.contact {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--quiet);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:focus-visible { outline: var(--focus-ring); outline-offset: 3px; border-radius: 2px; }
+
+/* The house folio, as in the app and in Prose & Pigment: the mark at cap height, plain serif, quiet, centred. */
+.folio {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--quiet);
+}
+.folio a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  padding-block: 0.9rem; /* a 44px target */
+  text-decoration: none;
+}
+.folio a:hover { text-decoration: underline; }
+.keys { width: 0.705em; height: 0.705em; flex: none; }

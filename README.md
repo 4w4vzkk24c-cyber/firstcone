@@ -1,0 +1,21 @@
+# firstcone.app
+
+The site for From the First Cone, a practice companion for youth coaches on
+iPhone. For now it is one page: the app's title page, set for the web.
+
+- `site/` is the whole site: static HTML and CSS, no build step, no script.
+  Vercel serves this directory (`vercel.json`), with clean URLs.
+- `site/fonts/` holds web subsets of Source Serif 4 under the SIL Open Font
+  License (`OFL-source-serif-4.txt`), copied from the Prose & Pigment site.
+- The cone mark is drawn from the same geometry as the app's `StripeMark`, and
+  each colour is a CSS variable, so the page follows light and dark.
+
+To look at it locally, serve `site/` with a static server. Asset paths are
+absolute, so opening the files directly does not work.
+
+`vercel.json` sends the same security headers as proseandpigment.app. The
+content policy allows styles, fonts and images from this site only, so an
+inline style, a script, or a file from another host is blocked.
+
+A push to the production branch deploys the site. `fromthefirstcone.com` is
+meant to redirect here, set as a redirect domain on the same Vercel project.
