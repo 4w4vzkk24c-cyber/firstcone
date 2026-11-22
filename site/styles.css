@@ -17,11 +17,20 @@
   --paper: #F5F1E6;
   --ink: #1F2E4A;   /* 10.49:1 on paper */
   --quiet: #69645A; /* 5.21:1 on paper */
-  --stripe-a: #6E8B5B;
-  --stripe-b: #586F49;
-  --cone: #D2A04A;
-  --cone-band: #82601E;
-  --cone-line: #F5F1E6;
+  /* The modelled cone mark, generated from build_modelled.py in the design folder. */
+  --sa: #6E8B5B;
+  --sb: #586F49;
+  --sh: #2E3C25;
+  --sho: 0.45;
+  --b0: #EBC06C;
+  --b1: #D2A04A;
+  --b2: #9C7128;
+  --n0: #9A7428;
+  --n1: #5E4515;
+  --p0: #B98A35;
+  --p1: #6E5019;
+  --hl: #FFF6DF;
+  --hlo: 0.35;
   --text: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --focus-ring: 2px solid var(--ink);
 }
@@ -31,11 +40,19 @@
     --paper: #383028;
     --ink: #F0EBDF;
     --quiet: #A39C90; /* 4.76:1 on dark paper */
-    --stripe-a: #56704A;
-    --stripe-b: #465C3A;
-    --cone: #D9B56E;
-    --cone-band: #8A6A2A;
-    --cone-line: #ECE7DA;
+    --sa: #56704A;
+    --sb: #465C3A;
+    --sh: #1C2616;
+    --sho: 0.55;
+    --b0: #E6C27A;
+    --b1: #CFA455;
+    --b2: #946C2A;
+    --n0: #93702C;
+    --n1: #5A4317;
+    --p0: #B08636;
+    --p1: #684C1A;
+    --hl: #FFF3D6;
+    --hlo: 0.28;
   }
 }
 
@@ -84,11 +101,17 @@ body {
 }
 
 .mark { display: block; margin-bottom: 0.9rem; }
-.st-a { fill: var(--stripe-a); }
-.st-b { fill: var(--stripe-b); }
-.cone { fill: var(--cone); }
-.cone-band { fill: var(--cone-band); }
-.cone-line { stroke: var(--cone-line); }
+.f-sa { fill: var(--sa); }
+.f-sb { fill: var(--sb); }
+.f-sh { fill: var(--sh); opacity: var(--sho); }
+.f-hl { fill: var(--hl); opacity: var(--hlo); }
+.s-b0 { stop-color: var(--b0); }
+.s-b1 { stop-color: var(--b1); }
+.s-b2 { stop-color: var(--b2); }
+.s-n0 { stop-color: var(--n0); }
+.s-n1 { stop-color: var(--n1); }
+.s-p0 { stop-color: var(--p0); }
+.s-p1 { stop-color: var(--p1); }
 
 h1 {
   margin: 0;
