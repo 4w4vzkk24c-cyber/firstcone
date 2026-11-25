@@ -121,4 +121,44 @@ a:focus-visible { outline: var(--focus-ring); outline-offset: 3px; border-radius
   text-decoration: none;
 }
 .folio a:hover { text-decoration: underline; }
+.folio nav { display: flex; justify-content: center; gap: 1.25rem; }
 .keys { width: 0.705em; height: 0.705em; flex: none; }
+
+/* Text pages: privacy and support. The masthead is the patch and the name; the page reads like the app's source sheet. */
+.masthead {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  align-self: center;
+  width: 100%;
+  max-width: 36rem;
+  min-height: 44px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.masthead:hover { text-decoration: underline; }
+.masthead img { display: block; }
+
+.doc {
+  flex: 1;
+  width: 100%;
+  max-width: 36rem;
+  margin: 1.5rem auto 2.5rem;
+}
+.doc h1 { font-size: clamp(2rem, 7vw, 2.5rem); }
+.doc h2 {
+  margin: 2.25rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.doc h3 {
+  margin: 1.25rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.doc p, .doc ul, .doc ol { margin: 0.6rem 0 0; }
+.doc ul, .doc ol { padding-left: 1.4rem; }
+.doc li + li { margin-top: 0.4rem; }
+.doc .quiet { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--quiet); }
+.doc .lede { margin-top: 1.25rem; font-size: 1.25rem; }
